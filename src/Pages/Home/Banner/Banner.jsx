@@ -42,6 +42,7 @@ const Banner = () => {
         >
          
           <SwiperSlide>
+            
           <div
             slot="container-start"
             className="parallax-bg"
