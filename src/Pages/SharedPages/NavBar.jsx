@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+
+  const handleLogout = () => {
+      logOut()
+          .then()
+          .catch((err) => {
+              console.log(err);
+          });
+  };
     const navOptions=<>
      <li> <input type="text" placeholder="Jewelry Name" className="input input-bordered input-info w-full max-w-xs" /></li>
     <li className='lg:text-white text-cyan-700'><Link to='/'>Home</Link> </li>
@@ -9,18 +20,7 @@ const NavBar = () => {
     <li className='lg:text-white text-cyan-700'><Link to='/all-jewelry'>All Jewelry</Link> </li>
     <li className='lg:text-white text-cyan-700'><Link to='/my-jewelry'>My Jewelry</Link> </li>
    
-    {/* <Link to='/dashboard/myCart'>
 
-<div className="badge badge-secondary p-3 my-3"> <FaShoppingCart/> +{cart?.length || 0}</div>
-</Link>
-   
-    <>
-    {
-     user ?  <li><button onClick={handleLogOut} className="btn btn-ghost">LogOut</button> </li>: <li><Link to='/login'>Login</Link> </li>
-    }
-    </> */}
-   
-  
  </>
     return (
        <div >
@@ -66,8 +66,21 @@ const NavBar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Sign Up</a>
-  </div>
+                {user ?
+                    <div className="dropdown dropdown-end flex">
+                           
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img src={user.photoURL} />
+                            </div>
+                        </label>
+                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>{user.displayName}</a></li>
+                            <li><a onClick={handleLogout}>Logout</a></li>
+                        </ul>
+                    </div> : <Link to='/sign-in'> <button className="btn   text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...">Login</button></Link>}
+
+            </div>
 </div>
        </div>
     );

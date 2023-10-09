@@ -8,8 +8,8 @@ const NewArrival = () => {
                 <h2 className='text-3xl'>Browse the new Collection</h2>
                 <p>................</p>
             </div>
-        <div className='flex sm:flex-col lg:flex-row gap-4'>
-        <div className="card w-96   image-full">
+        <div className='flex flex-col lg:flex-row gap-4'>
+        <div className="card w-76   image-full">
   <figure className="relative">
     <img src="https://res.cloudinary.com/drhtv8dr4/image/upload/v1696824176/bg-3_xhkv9w.jpg" alt="Ring" />
     <div className="image-overlay text-white font-serif ">
@@ -21,7 +21,7 @@ const NewArrival = () => {
     </div>
   </figure>
 </div>
-<div className="card w-96   image-full">
+<div className="card w-76  image-full">
   <figure className="relative">
     <img src="https://res.cloudinary.com/drhtv8dr4/image/upload/v1696824186/bg-2_vgtm76.jpg" alt="Ring" />
     <div className="image-overlay text-white font-serif ">
@@ -33,7 +33,7 @@ const NewArrival = () => {
     </div>
   </figure>
 </div>
-<div className="card w-96   image-full">
+<div className="card w-76  image-full">
   <figure className="relative">
     <img src="https://res.cloudinary.com/drhtv8dr4/image/upload/v1696824196/bg-1_kfy4ka.jpg" alt="Ring" />
     <div className="image-overlay text-white font-serif ">
@@ -46,7 +46,7 @@ const NewArrival = () => {
   </figure>
 </div>
       
-        <div className="card w-96   image-full">
+        <div className="card w-76  image-full">
   <figure className="relative">
     <img src="https://res.cloudinary.com/drhtv8dr4/image/upload/v1696824176/bg-3_xhkv9w.jpg" alt="Ring" />
     <div className="image-overlay text-white font-serif ">
@@ -58,7 +58,7 @@ const NewArrival = () => {
     </div>
   </figure>
 </div>
-<div className="card w-96   image-full">
+<div className="card w-76  image-full">
   <figure className="relative">
     <img src="https://res.cloudinary.com/drhtv8dr4/image/upload/v1696824186/bg-2_vgtm76.jpg" alt="Ring" />
     <div className="image-overlay text-white font-serif ">
@@ -70,7 +70,7 @@ const NewArrival = () => {
     </div>
   </figure>
 </div>
-<div className="card w-96   image-full">
+<div className="card w-76  image-full">
   <figure className="relative">
     <img src="https://res.cloudinary.com/drhtv8dr4/image/upload/v1696824196/bg-1_kfy4ka.jpg" alt="Ring" />
     <div className="image-overlay text-white font-serif ">

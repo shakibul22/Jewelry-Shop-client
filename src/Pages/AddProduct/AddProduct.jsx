@@ -8,7 +8,6 @@ const AddProduct = () => {
     const [name, setName] = useState('');
     const [sellerName, setSellerName] = useState('');
     const [sellerEmail, setSellerEmail] = useState('');
-    const [subCategory, setSubCategory] = useState('');
     const [price, setPrice] = useState('');
     const [rating, setRating] = useState('');
     const [quantity, setQuantity] = useState('');
@@ -17,7 +16,7 @@ const AddProduct = () => {
     const handleAddToy = (event) => {
         event.preventDefault();
 
-        const subCategoryData = { pictureUrl, name, sellerName: user?.displayName, subCategory, sellerEmail: user?.email, price, rating, quantity, description, };
+        const subCategoryData = { pictureUrl, name, sellerName: user?.displayName,  sellerEmail: user?.email, price, rating, quantity, description, };
 
         fetch('https://toys-market-place-server.vercel.app/PostToy', {
             method: 'POST',
@@ -37,7 +36,7 @@ const AddProduct = () => {
     console.log(user);
 
     return (
-        <div className="container mx-auto  p-4">
+        <div className="container mx-auto  p-4 mt-10 md:mt-20">
 
             <h1 className="text-2xl font-bold mb-8 text-center">Add A Jewelry</h1>
             <form onSubmit={handleAddToy} className=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -91,20 +90,7 @@ const AddProduct = () => {
                     />
                 </div>
 
-                <div className="mb-3 ">
-
-                    <label htmlFor="subCategory" className="block mb-1">
-                        Sub-category:
-                    </label>
-                    <select className='w-full border border-gray-300 rounded px-3 py-2' value={subCategory} onChange={(e) => setSubCategory(e.target.value)}>
-                        <option value="">select</option>
-                        <option value='Mathematics Toys'>Mathematics Toys</option>
-                        <option value='Science Toys'>Science Toys</option>
-                        <option 
-                        value='Language Toys'>Language Toys</option>
-                    </select>
-
-                </div>
+               
                 <div className="mb-4">
                     <label htmlFor="price" className="block mb-1">
                         Price:
