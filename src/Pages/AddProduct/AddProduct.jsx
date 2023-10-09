@@ -18,7 +18,7 @@ const AddProduct = () => {
 
         const data = { pictureUrl, name, sellerName: user?.displayName,  sellerEmail: user?.email, price, rating, quantity, description, };
 
-        fetch('http://localhost:5000/PostJewelry', {
+        fetch('https://jewelry-shop-server-gggoggy1u-shakibul22.vercel.app/PostJewelry', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
