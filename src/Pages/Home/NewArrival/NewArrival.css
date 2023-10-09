@@ -1,0 +1,24 @@
+/* Add any custom styles for the card and image here */
+.card {
+    position: relative;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* Add a transition for smooth effect */
+  }
+  
+  .card:hover .image-overlay {
+    opacity: 1;
+  }
+  

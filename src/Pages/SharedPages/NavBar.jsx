@@ -23,7 +23,7 @@ const NavBar = () => {
   
  </>
     return (
-       <>
+       <div >
   <div className='bg-cyan-400  flex flex-row justify-between px-4 items-center '>
   <p className='p-2 text-md hidden md:block'>
     Purchases made on this site will ship to B.D. addresses only. Do you want to shop the B.D. site?
@@ -47,7 +47,7 @@ const NavBar = () => {
 
 
 
-        <div className="navbar fixed w-full z-30 bg-opacity-50  text-white  bg-black ">
+        <div className="navbar absolute max-w-6xl mx-auto z-30 bg-opacity-50  text-white  bg-black ">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -69,7 +69,7 @@ const NavBar = () => {
     <a className="btn">Sign Up</a>
   </div>
 </div>
-       </>
+       </div>
     );
 };
 
