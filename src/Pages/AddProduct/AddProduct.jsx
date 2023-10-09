@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
-import Swal from 'sweetalert2';
 import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddProduct = () => {
     const { user } = useContext(AuthContext);
@@ -16,20 +16,20 @@ const AddProduct = () => {
     const handleAddToy = (event) => {
         event.preventDefault();
 
-        const subCategoryData = { pictureUrl, name, sellerName: user?.displayName,  sellerEmail: user?.email, price, rating, quantity, description, };
+        const data = { pictureUrl, name, sellerName: user?.displayName,  sellerEmail: user?.email, price, rating, quantity, description, };
 
-        fetch('https://toys-market-place-server.vercel.app/PostToy', {
+        fetch('http://localhost:5000/PostJewelry', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
             },
-            body: JSON.stringify(subCategoryData),
+            body: JSON.stringify(data),
         })
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
                 if (data.insertedId) {
-                    Swal('Success', 'Added jewelry successfully!', 'success');
+                    Swal.fire('Success', 'Added jewelry successfully!', 'success');
                 }
             });
     };
@@ -79,7 +79,7 @@ const AddProduct = () => {
                 </div>
                 <div className="mb-4">
                     <label htmlFor="pictureUrl" className="block mb-1">
-                        Picture URL of the toy:
+                        Picture URL :
                     </label>
                     <input
                         type="text"
