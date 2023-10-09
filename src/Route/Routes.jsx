@@ -6,6 +6,7 @@ import AddProduct from "../Pages/AddProduct/AddProduct";
 import SignUp from "../Pages/SignUp/SignUp";
 import SignIn from "../Pages/Login/SignIn";
 import AllJewelry from "../Pages/AllJewelry/AllJewelry";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -28,12 +29,13 @@ const router = createBrowserRouter([
             },
             {
                 path: '/add-jewelry',
-                element: <AddProduct/>
+                element: <PrivateRoute><AddProduct/></PrivateRoute>
             },
             {
                 path: '/all-jewelry',
                 element: <AllJewelry/>
             },
+          
         
          
         ]
